@@ -1,0 +1,109 @@
+{
+  "_format": "hh-vyper-artifact-1",
+  "contractName": "Treasury",
+  "sourceName": "contracts/Treasury.vy",
+  "abi": [
+    {
+      "stateMutability": "nonpayable",
+      "type": "constructor",
+      "inputs": [
+        {
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "name": "set_minter",
+      "inputs": [
+        {
+          "name": "_minter",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "gas": 37545
+    },
+    {
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "name": "set_admin",
+      "inputs": [
+        {
+          "name": "_admin",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "gas": 37575
+    },
+    {
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "name": "mint",
+      "inputs": [
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "gas": 9299
+    },
+    {
+      "stateMutability": "view",
+      "type": "function",
+      "name": "token",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "gas": 2478
+    },
+    {
+      "stateMutability": "view",
+      "type": "function",
+      "name": "minter",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "gas": 2508
+    },
+    {
+      "stateMutability": "view",
+      "type": "function",
+      "name": "admin",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "gas": 2538
+    }
+  ],
+  "bytecode": "0x60206101a16101403960206101a160c03960c05160a01c1561002057600080fd5b610140516000553360025561018956600436101561000d57610153565b600035601c52600051341561002157600080fd5b631652e9fc8114156100535760043560a01c1561003d57600080fd5b600254331461004b57600080fd5b600435600155005b63e9333fab8114156100855760043560a01c1561006f57600080fd5b600254331461007d57600080fd5b600435600255005b6340c10f198114156101095760043560a01c156100a157600080fd5b6001543314156100b25760016100b8565b60025433145b6100c157600080fd5b60206101e0604463a9059cbb61014052604060046101603761015c60006000545af16100ec57600080fd5b601f3d116100f957600080fd5b6000506101e05160005260206000f35b63fc0c546a8114156101215760005460005260206000f35b63075461728114156101395760015460005260206000f35b63f851a4408114156101515760025460005260206000f35b505b60006000fd5b61003061018903610030600039610030610189036000f3",
+  "deployedBytecode": "0x600436101561000d57610153565b600035601c52600051341561002157600080fd5b631652e9fc8114156100535760043560a01c1561003d57600080fd5b600254331461004b57600080fd5b600435600155005b63e9333fab8114156100855760043560a01c1561006f57600080fd5b600254331461007d57600080fd5b600435600255005b6340c10f198114156101095760043560a01c156100a157600080fd5b6001543314156100b25760016100b8565b60025433145b6100c157600080fd5b60206101e0604463a9059cbb61014052604060046101603761015c60006000545af16100ec57600080fd5b601f3d116100f957600080fd5b6000506101e05160005260206000f35b63fc0c546a8114156101215760005460005260206000f35b63075461728114156101395760015460005260206000f35b63f851a4408114156101515760025460005260206000f35b505b60006000fd",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,110 @@
+{
+  "_format": "hh-vyper-artifact-1",
+  "contractName": "SmartWalletChecker",
+  "sourceName": "contracts/SmartWalletChecker.vy",
+  "abi": [
+    {
+      "stateMutability": "nonpayable",
+      "type": "constructor",
+      "inputs": [
+        {
+          "name": "admin",
+          "type": "address"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "stateMutability": "view",
+      "type": "function",
+      "name": "check",
+      "inputs": [
+        {
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "gas": 2603
+    },
+    {
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "name": "add_to_whitelist",
+      "inputs": [
+        {
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "gas": 37687
+    },
+    {
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "name": "revoke_from_whitelist",
+      "inputs": [
+        {
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "gas": 22717
+    },
+    {
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "name": "set_admin",
+      "inputs": [
+        {
+          "name": "new_admin",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "gas": 37635
+    },
+    {
+      "stateMutability": "view",
+      "type": "function",
+      "name": "admin",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "gas": 2508
+    },
+    {
+      "stateMutability": "view",
+      "type": "function",
+      "name": "whitelisted",
+      "inputs": [
+        {
+          "name": "arg0",
+          "type": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "gas": 2753
+    }
+  ],
+  "bytecode": "0x60206101a16101403960206101a160c03960c05160a01c1561002057600080fd5b6101405160005561018956600436101561000d57610157565b600035601c52600051341561002157600080fd5b63c23697a88114156100575760043560a01c1561003d57600080fd5b600160043560e05260c052604060c0205460005260206000f35b63ac25f2668114156100965760043560a01c1561007357600080fd5b600054331461008157600080fd5b6001600160043560e05260c052604060c02055005b639bbfb8cf8114156100d55760043560a01c156100b257600080fd5b60005433146100c057600080fd5b6000600160043560e05260c052604060c02055005b63e9333fab8114156101075760043560a01c156100f157600080fd5b60005433146100ff57600080fd5b600435600055005b63f851a44081141561011f5760005460005260206000f35b63d936547e8114156101555760043560a01c1561013b57600080fd5b600160043560e05260c052604060c0205460005260206000f35b505b60006000fd5b61002c6101890361002c60003961002c610189036000f3",
+  "deployedBytecode": "0x600436101561000d57610157565b600035601c52600051341561002157600080fd5b63c23697a88114156100575760043560a01c1561003d57600080fd5b600160043560e05260c052604060c0205460005260206000f35b63ac25f2668114156100965760043560a01c1561007357600080fd5b600054331461008157600080fd5b6001600160043560e05260c052604060c02055005b639bbfb8cf8114156100d55760043560a01c156100b257600080fd5b60005433146100c057600080fd5b6000600160043560e05260c052604060c02055005b63e9333fab8114156101075760043560a01c156100f157600080fd5b60005433146100ff57600080fd5b600435600055005b63f851a44081141561011f5760005460005260206000f35b63d936547e8114156101555760043560a01c1561013b57600080fd5b600160043560e05260c052604060c0205460005260206000f35b505b60006000fd",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
