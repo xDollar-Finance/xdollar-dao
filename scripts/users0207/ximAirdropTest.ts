@@ -1,0 +1,286 @@
+import { ethers, BigNumber } from "ethers";
+import { JsonRpcProvider } from "@ethersproject/providers";
+import Airdrop from "./airdropTest.json";
+
+
+
+const XIM_ABI = [
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "name",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_spender",
+                "type": "address"
+            },
+            {
+                "name": "_value",
+                "type": "uint256"
+            }
+        ],
+        "name": "approve",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "totalSupply",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_from",
+                "type": "address"
+            },
+            {
+                "name": "_to",
+                "type": "address"
+            },
+            {
+                "name": "_value",
+                "type": "uint256"
+            }
+        ],
+        "name": "transferFrom",s
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "decimals",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint8"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "_owner",
+                "type": "address"
+            }
+        ],
+        "name": "balanceOf",
+        "outputs": [
+            {
+                "name": "balance",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "symbol",
+        "outputs": [
+            {
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+            {
+                "name": "_to",
+                "type": "address"
+            },
+            {
+                "name": "_value",
+                "type": "uint256"
+            }
+        ],
+        "name": "transfer",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [
+            {
+                "name": "_owner",
+                "type": "address"
+            },
+            {
+                "name": "_spender",
+                "type": "address"
+            }
+        ],
+        "name": "allowance",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "payable": true,
+        "stateMutability": "payable",
+        "type": "fallback"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "name": "owner",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "name": "spender",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "name": "value",
+                "type": "uint256"
+            }
+        ],
+        "name": "Approval",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "name": "value",
+                "type": "uint256"
+            }
+        ],
+        "name": "Transfer",
+        "type": "event"
+    }
+]
+
+// usdt as test token
+const XIM_ADDRESS = "0x6fbcdc1169b5130c59e72e51ed68a84841c98cd1"
+const provider = new JsonRpcProvider("https://babel-api.mainnet.iotex.io");
+// const send_account = "0x93C7699d27825AA3EA5b2c7C3e4b25Bc46Bf9296"
+// const gas_limit = "0x100000"
+const wallet = new ethers.Wallet(`0x${process.env.DEV_PRIVATE_KEY}`)
+const walletSigner = wallet.connect(provider)
+const xim = new ethers.Contract(XIM_ADDRESS, XIM_ABI, walletSigner)
+
+
+const sendAirDrop = async () => {
+    for (const [address, tokens] of Object.entries(Airdrop)) {
+        await sendXimToken(address, tokens);
+    }
+    console.log('All finished!')
+}
+
+const sendXimToken = async (
+    to_address: string,
+    send_token_amount: string,
+) => {
+
+    let numberOfTokens = BigNumber.from(send_token_amount)
+    console.log(`numberOfTokens: ${numberOfTokens}`)
+
+    // Send tokens
+    const tx = await xim.transfer(to_address, numberOfTokens);
+    await tx.wait();
+    console.dir(tx);
+}
+
+// const data = contract.transfer.getData(to_address, 10000, {from: send_account});
+// const tx = {
+//     from: send_account,
+//     to: to_address,
+//     value: ethers.utils.parseEther(send_token_amount),
+//     nonce: provider.getTransactionCount(
+//     send_account,
+//     "latest"
+//     ),
+//     "data": data,
+//     gasLimit: ethers.utils.hexlify(gas_limit), // 100000
+//     gasPrice: gas_price,
+// }
+
+
+
+// Send tokens
+// contract.transfer(to_address, numberOfTokens).then((tx: any) => {
+//     console.dir(tx)
+//     alert("sent token")
+// })
+
+
+
+sendAirDrop()
+

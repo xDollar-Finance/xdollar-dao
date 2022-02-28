@@ -1,0 +1,78 @@
+[
+    {
+        "user": "0x8acbC4a734f494935FeC9d03B975F5b9A5B9C8Ca",
+        "balance": "603"
+    },
+    {
+        "user": "0x569B1069b63aC268702D59403e8e339D00c5746d",
+        "balance": "0"
+    },
+    {
+        "user": "0xd0D4831B51865DeA6615604149272eB5FA154E88",
+        "balance": "9585"
+    },
+    {
+        "user": "0x9125b2457479964540a0557e3B010681317B635E",
+        "balance": "464"
+    },
+    {
+        "user": "0xd26E490c6121ed2756770b529238FC51dd3e84e3",
+        "balance": "0"
+    },
+    {
+        "user": "0x495c6e272fBd6f35dfe6B957f253492f81cb8D00",
+        "balance": "0"
+    },
+    {
+        "user": "0xE6Ab839BfD2a59CE195573C12c644de6CD2062F1",
+        "balance": "3331"
+    },
+    {
+        "user": "0x4DAF333c0BFbea63A78D2c53E32BfD48Df54A09a",
+        "balance": "6071"
+    },
+    {
+        "user": "0x82aA832B6AC60DB4059f7115c747e132C36f6156",
+        "balance": "4827"
+    },
+    {
+        "user": "0xda241332DB9f116046b8591c9bcb9D76F1096Ed4",
+        "balance": "0"
+    },
+    {
+        "user": "0xbAFD452d6a7BDD48D4314Db1948834ea513DEDD4",
+        "balance": "60000"
+    },
+    {
+        "user": "0xD6fc82C430A97A985CC6E87abb995FDBEf503BaF",
+        "balance": "0"
+    },
+    {
+        "user": "0xb848c8F28c76dBA096b5BBfdE4642f5Df3059b3b",
+        "balance": "402"
+    },
+    {
+        "user": "0x40765f78c168e6E52Ba4Dc4F1e88DF3D12FE9eB4",
+        "balance": "59502"
+    },
+    {
+        "user": "0x653fBA50804DdA3aBF7B2189d70353A08e0fCF83",
+        "balance": "0"
+    },
+    {
+        "user": "0x25b5e511CaDFb756b5e86A4d39e3bfB6be1c4079",
+        "balance": "30000"
+    },
+    {
+        "user": "0xc43307e574F6c6AB6264797d1C9ccd78888AC3C2",
+        "balance": "0"
+    },
+    {
+        "user": "0x893c5695223379985255B9B4C06604d3C9BD530d",
+        "balance": "3303"
+    },
+    {
+        "user": "0xAc1552431532591A58BcedD3Ad416637fDB650F6",
+        "balance": "50046"
+    }
+]
